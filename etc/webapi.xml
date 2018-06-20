@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ * Contributor company: iPragmatech solution Pvt Ltd.
+ * Contributor Author : Manish Kumar
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/wishlist/items" method="GET">
+        <service class="Blark\Wishlist\Api\WishlistManagementInterface" method="getWishlist"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/wishlist/info" method="GET">
+        <service class="Blark\Wishlist\Api\WishlistManagementInterface" method="getWishlistInfo"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/V1/wishlist/add/:productId" method="POST">
+        <service class="Blark\Wishlist\Api\WishlistManagementInterface" method="addToWishlist"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/wishlist/delete/:itemId" method="DELETE">
+        <service class="Blark\Wishlist\Api\WishlistManagementInterface" method="removeFromWishlist"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+</routes>

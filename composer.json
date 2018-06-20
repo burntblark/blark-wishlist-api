@@ -1,0 +1,29 @@
+{
+  "name": "blark/wishlist-api",
+  "description": "Wishlist API",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "authors": [
+    {
+      "name": "Babatunde Familusi",
+      "email": "burntblark@gmail.com",
+      "homepage": "https://github.com/burntblark",
+      "role": "Chief Technology Officer"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Blark\\Wishlist\\": ""
+    }
+  }
+}
